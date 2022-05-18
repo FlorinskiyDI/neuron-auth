@@ -3,7 +3,7 @@ using Auth.API.Infrastructure.Identity;
 using Auth.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 
-namespace Auth.API.Infrastructure.Extensions
+namespace Auth.API.Infrastructure
 {
     public static class MigrateDbExtension
     {

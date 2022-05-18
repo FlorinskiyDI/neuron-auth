@@ -4,7 +4,7 @@ using Auth.Infrastructure.IdentityManagers;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
-namespace Auth.API.Infrastructure.Extensions
+namespace Auth.API.Infrastructure
 {
     public static class IdentityExtensions
     {

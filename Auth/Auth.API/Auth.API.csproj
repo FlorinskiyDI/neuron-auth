@@ -23,12 +23,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\Auth.Domain\Auth.Domain.csproj" />
+    <ProjectReference Include="..\Auth.Infrastructure\Auth.Infrastructure.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Auth.Domain\Auth.Domain.csproj" />
-    <ProjectReference Include="..\Auth.Infrastructure\Auth.Infrastructure.csproj" />
+    <Folder Include="Infrastructure\Extensions\" />
+    <Folder Include="wwwroot\" />
   </ItemGroup>
 
 </Project>
