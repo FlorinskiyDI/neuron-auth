@@ -3,6 +3,7 @@ using IdentityServer4.Extensions;
 using IdentityServer4.Models;
 using IdentityServer4.Services;
 using Microsoft.AspNetCore.Identity;
+using System.Security.Claims;
 
 namespace Auth.API.Infrastructure.IdenityServer.Configurations
 {
@@ -21,10 +22,9 @@ namespace Auth.API.Infrastructure.IdenityServer.Configurations
             var sub = context.Subject.GetSubjectId();
             var user = _userManager.FindByIdAsync(sub).Result;
 
-            //var user = InMemoryConfig.GetUsers()
-            //    .Find(u => u.SubjectId.Equals(sub));
+            // add custom claims to token
+            context.IssuedClaims.Add(new Claim("name", user.Email));
 
-            //context.IssuedClaims.AddRange(user.Claims);
             return Task.CompletedTask;
         }
 
