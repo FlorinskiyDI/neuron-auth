@@ -18,7 +18,7 @@ namespace Auth.API.Infrastructure
                     opt.Authentication.CookieLifetime = TimeSpan.FromMinutes(4);
                 })
                 .AddAspNetIdentity<ApplicationUser>()
-                //.AddTemporarySigningCredential()
+                .AddDeveloperSigningCredential() // TODOit is temp solution to support certificate with https
                 .AddProfileService<CustomProfileService>()
                 .AddConfigurationStore<IdentityServerDbContext>(options =>
                 {

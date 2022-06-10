@@ -8,7 +8,7 @@ Reserved service ports:
 - port 5105 - Auth Service (Http)
 - port 5005 - Auth Service (Grpc)
 
-### Migration commands:
+### Migration - creating migration commands:
 
 IdentityServer4
 ```
@@ -19,4 +19,11 @@ Add-Migration InitialConfigurationDbMigration -c IdentityServerDbContext -o Infr
 AuthService
 ```
 Add-Migration InitialApplicationDbMigration -c ApplicationDbContext -o Infrastructure/Migrations/Application/ApplicationDb
+```
+
+### Migration - update database commands
+```
+update-database -context ApplicationDbContext
+update-database -context IdentityServerDbContext
+update-database -context PersistedGrantDbContext
 ```
